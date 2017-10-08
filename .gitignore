@@ -74,10 +74,7 @@ buildNumber.properties
 !/.mvn/wrapper/maven-wrapper.jar
 
 # Intellij IDA
-*.class
-*.log
 .idea/
-*.iml
 
 # End of https://www.gitignore.io/api/eclipse
 
