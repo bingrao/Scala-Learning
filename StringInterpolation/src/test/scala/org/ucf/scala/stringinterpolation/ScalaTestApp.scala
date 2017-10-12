@@ -11,7 +11,6 @@ class ScalaTestAPP {
     assertTrue(true)
   }
   @Test def testStringInterpolation(): Unit = {
-    import org.ucf.scala.StringInterpolation
     StringInterpolation.printInfo_s
     StringInterpolation.printInfo_f
     StringInterpolation.printInfo_raw
