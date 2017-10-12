@@ -16,7 +16,7 @@ class Playground extends org.scalatest.FunSuite {
     logger.elem(tree.structure)
   }
   test("Part3: source file"){
-    val srcPath = "src/main/scala/org/ucf/scala/ScalaApp.scala"
+    val srcPath = "Scalameta/src/main/resource/ScalaApp.scala"
     val srcFile = new java.io.File(srcPath)
     val source = srcFile.parse[Source].get
     logger.elem(source.syntax)
