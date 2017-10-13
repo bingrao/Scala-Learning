@@ -11,6 +11,7 @@
         <module>PatternMatching</module>
         <module>Scalameta</module>
         <module>StringInterpolation</module>
+        <module>ScalaReflect</module>
     </modules>
     <name>Scala-Learning</name>
   	<packaging>pom</packaging>
