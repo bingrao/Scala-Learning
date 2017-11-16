@@ -36,7 +36,6 @@ trait Trees extends api.Trees {
 
 
   /********************************************************************************************************************/
-
   /**
     * This abstract class is the root of all other trees in the AST, with some common functionality for all others.
     *  - Position
@@ -377,7 +376,7 @@ trait Trees extends api.Trees {
     * @param mods Modifiers are a set of abstract, final, sealed, private, protected, trait, case.
     *              Note that the class keyword is not contained in the modifiers.
     * @param name name
-    * @param tparams  type parameters
+    * @param tparams  type parameters for generic type info
     * @param impl The class' constructor arguments, super classes and its body are all defined in the impl Template
     *
     * If the class is anonymous (this can be queried with isAnonymousClass on the class' symbol),
@@ -445,10 +444,10 @@ trait Trees extends api.Trees {
     *
     * Value definitions are all definitions of vals, vars (identified by the MUTABLE flag) and
     * parameters (identified by the param flag).
-    * @param mods
-    * @param name
-    * @param tpt
-    * @param rhs
+    * @param mods modifiers
+    * @param name name
+    * @param tpt the define type info
+    * @param rhs right expression
     *
     *  Note that not every val in the source code is necessarily also represented by a ValDef, for example
     *  trait A {                 ----> abstract trait A extends scala.AnyRef {
@@ -475,10 +474,10 @@ trait Trees extends api.Trees {
     * @param mods modifiers that further describe the implementation or constrain its visibility
     * @param name the name, but note that symbolic names are stored in their alphabetic form, to
     *               get the original name, the symbol’s nameString method can be used
-    * @param tparams
+    * @param tparams generic type info for method.
     * @param vparamss several argument lists
-    * @param tpt  a method can be parametrized with types
-    * @param rhs  return value
+    * @param tpt  a method can be parametrized with types (return type)
+    * @param rhs  return expresion tree (usually the last statement)
     *
     * Finding methods in sub- or super classes requires the use of their symbols. Super
     * classes can be found via the ancestors method on the class’ symbol. In contrast, moving
@@ -504,6 +503,15 @@ trait Trees extends api.Trees {
     * @param name
     * @param tparams
     * @param rhs
+    *  example:
+    *   type MySparseVector = List((Int, Double))   --->
+    *  TypeDef(
+            Modifiers(0, , List()),
+            MySparseVector,
+            List(),
+            Select(Select(Ident(scala), package),
+            List)
+          )
     */
   case class TypeDef(mods: Modifiers, name: TypeName, tparams: List[TypeDef], rhs: Tree)
     extends MemberDef with TypeDefApi
@@ -536,10 +544,12 @@ trait Trees extends api.Trees {
   /**
     * An ImportSelector has two name-position pairs, the first one stands for the imported name and the second
     * one is an optional renaming. Wildcard imports are also represented with an ImportSelector
+    * Example: import org.ucf.{scala => Bing}
     * @param name
     * @param namePos
     * @param rename
     * @param renamePos
+    *
     */
   case class ImportSelector(name: Name, namePos: Int, rename: Name, renamePos: Int) extends ImportSelectorApi
   object ImportSelector extends ImportSelectorExtractor {
@@ -553,6 +563,10 @@ trait Trees extends api.Trees {
     * the import keyword in its position.
     * @param expr
     * @param selectors
+    * import org.apache.spark.SparkContext;
+    * Import(
+      Select(Select(Ident(org), apache), spark),
+      List(ImportSelector(SparkContext, 55, SparkContext, 55))),
     */
   case class Import(expr: Tree, selectors: List[ImportSelector])
     extends SymTree with ImportApi
@@ -562,7 +576,7 @@ trait Trees extends api.Trees {
     * The implementation of either a ModuleDef or ClassDef
     *
     * @param parents contains early definitions,super types
-    * @param self  the self type annotation
+    * @param self  the self type annotation like class A {self =>  }
     * @param body  the statements in the class body
     *
     * In the case of a ClassDef, it also contains the class’ constructor parameters.

@@ -83,6 +83,14 @@ trait TreeCreationMethods {
         treeFrom(path)
     }
 
+  /*
+   * TODO at this moment, this api does not work.
+   */
+  def compileSource(path:String):Unit = {
+    val code = AbstractFile.getFile(path)
+    val file  = new BatchSourceFile(code, code.toCharArray)
+    this.global.currentRun.compileSources(List(file))
+  }
   def treeFrom(file: SourceFile): global.Tree = {
 
     val response = new Response[global.Tree]

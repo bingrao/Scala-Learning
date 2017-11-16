@@ -12,6 +12,7 @@
         <module>Scalameta</module>
         <module>StringInterpolation</module>
         <module>ScalaReflect</module>
+        <module>Extractor</module>
     </modules>
     <name>Scala-Learning</name>
   	<packaging>pom</packaging>
