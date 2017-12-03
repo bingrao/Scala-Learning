@@ -13,6 +13,7 @@
         <module>StringInterpolation</module>
         <module>ScalaReflect</module>
         <module>Extractor</module>
+        <module>TraitClassObject</module>
     </modules>
     <name>Scala-Learning</name>
   	<packaging>pom</packaging>
