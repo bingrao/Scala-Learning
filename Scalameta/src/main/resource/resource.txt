@@ -1,1 +1,0 @@
-#Store resource file when you compile your program

@@ -9,11 +9,11 @@
   	<version>1.0-SNAPSHOT</version>
     <modules>
         <module>PatternMatching</module>
-        <module>Scalameta</module>
         <module>StringInterpolation</module>
         <module>ScalaReflect</module>
         <module>Extractor</module>
         <module>TraitClassObject</module>
+        <module>ScalaPlugin</module>
     </modules>
     <name>Scala-Learning</name>
   	<packaging>pom</packaging>
