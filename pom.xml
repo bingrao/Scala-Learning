@@ -14,6 +14,7 @@
         <module>Extractor</module>
         <module>TraitClassObject</module>
         <module>ScalaPlugin</module>
+        <module>ImplicitLearning</module>
     </modules>
     <name>Scala-Learning</name>
   	<packaging>pom</packaging>

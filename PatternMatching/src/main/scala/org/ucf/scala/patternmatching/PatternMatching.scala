@@ -98,7 +98,7 @@ object PatternMatching {
     */
 
   def tupleDemo(expr:Any) = expr match{
-    case (a,b,c) => //A pattern like (a, b, c) matches an arbitrary 3-tuple
+    case (a,b,c) => //A pattern like (a, b, c) matches an arbitrary 3-tuple, at this time a, b and c represent elements
       println("matched"+a+b+c)
     case _ =>
   }
