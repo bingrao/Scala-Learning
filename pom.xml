@@ -15,6 +15,7 @@
         <module>TraitClassObject</module>
         <module>ScalaPlugin</module>
         <module>ImplicitLearning</module>
+        <module>AccessModifiers</module>
     </modules>
     <name>Scala-Learning</name>
   	<packaging>pom</packaging>
