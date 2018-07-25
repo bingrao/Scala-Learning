@@ -16,6 +16,7 @@
         <module>ScalaPlugin</module>
         <module>ImplicitLearning</module>
         <module>AccessModifiers</module>
+        <module>Underscore</module>
     </modules>
     <name>Scala-Learning</name>
   	<packaging>pom</packaging>
