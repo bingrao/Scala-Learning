@@ -23,7 +23,7 @@
   	<packaging>pom</packaging>
 
      <properties>
-       <scala.version>2.11.8</scala.version>
+       <scala.version>2.13.1</scala.version>
        <scala.binary.version>2.11</scala.binary.version>
        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
