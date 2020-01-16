@@ -17,6 +17,7 @@
         <module>ImplicitLearning</module>
         <module>AccessModifiers</module>
         <module>Underscore</module>
+        <module>StackableTrait</module>
     </modules>
     <name>Scala-Learning</name>
   	<packaging>pom</packaging>
