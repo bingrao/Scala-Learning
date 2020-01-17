@@ -41,7 +41,6 @@ object PartialFunction {
     */
   // b: Int => Int
   val b = sum(1,_:Int, 3)
-  val b_ = sum (1, _, 3) // simply code to remove type
   val b_1 = b(2)
 
 
