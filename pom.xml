@@ -18,12 +18,14 @@
         <module>AccessModifiers</module>
         <module>Underscore</module>
         <module>StackableTrait</module>
+        <module>ControlFlow</module>
+        <module>Function</module>
     </modules>
     <name>Scala-Learning</name>
   	<packaging>pom</packaging>
 
      <properties>
-       <scala.version>2.11.8</scala.version>
+       <scala.version>2.11.12</scala.version>
        <scala.binary.version>2.11</scala.binary.version>
        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
