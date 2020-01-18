@@ -20,6 +20,7 @@
         <module>StackableTrait</module>
         <module>ControlFlow</module>
         <module>Function</module>
+        <module>ControlAbstraction</module>
     </modules>
     <name>Scala-Learning</name>
   	<packaging>pom</packaging>
